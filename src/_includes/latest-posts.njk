@@ -1,0 +1,10 @@
+<div class="featured-posts">
+    <img src="/assets/img/new.png" alt="new" style="transform: rotate(-90deg); width: 32px;">
+    <h3> Latest
+        {% if title === "Blog" %}
+            Posts
+        {% else %}
+            {{title}}
+        {% endif %}
+        <small>({{totalCount - featuredCount}})</small></h3>
+</div>

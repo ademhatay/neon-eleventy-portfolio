@@ -1,0 +1,9 @@
+<div class="pagination-container">
+    {% if page.url != pagination.href.first %}
+      <a class="pagination-link" href="{{ pagination.href.previous }}">&leftarrow; Previous Page</a>
+    {% else %}<span class="pagination-link"></span>{% endif %}
+    <div class="pagination-info">{{ pagination.pageNumber + 1 }} / {{ pagination.pages | count }}</div>
+    {% if page.url != pagination.href.last %}
+      <a class="pagination-link" style="text-align: right;" href="{{ pagination.href.next }}">Next Page &rightarrow;</a>
+    {% else %}<span class="pagination-link"></span>{% endif %}
+</div>

@@ -1,0 +1,45 @@
+<div class="author">
+    {% if author.avatar %}
+    <img src="{{author.avatar}}" alt="{{author.name}}" class="author-avatar">
+    {% endif %}
+    <div class="author-info">
+        {% if author.name %}
+        <h4 class="author-name">
+            {{author.username}}
+        </h4>
+        {% endif %}
+        {% if author.minibio %}
+        <p class="author-bio">
+            {{author.minibio}}
+        </p>
+        {% endif %}
+    </div>
+    <div class="author-social">
+        {% if author.socialLinks.twitter %}
+        <a href="{{author.socialLinks.twitter}}" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/twitterx.png" alt="Twitter" class="social-icon">
+        </a>
+        {% endif %}
+        {% if author.socialLinks.github %}
+        <a href="{{author.socialLinks.github}}" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/github.png" alt="Github" class="social-icon">
+        </a>
+        {% endif %}
+        {% if author.socialLinks.linkedin %}
+        <a href="{{author.socialLinks.linkedin}}" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/linkedin.png" alt="linkedin" class="social-icon">
+        </a>
+        {% endif %}
+        {% if author.socialLinks.instagram %}
+        <a href="{{author.socialLinks.instagram}}" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/instagram.png" alt="instagram" class="social-icon">
+        </a>
+        {% endif %}
+        {% if author.socialLinks.email %}
+        <a href={{author.socialLinks.email}} target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/gmail.png" alt="gmail" class="social-icon">
+        </a>
+        {% endif %}
+
+    </div>
+</div>

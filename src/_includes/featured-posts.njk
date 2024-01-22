@@ -1,0 +1,18 @@
+<div class="featured-posts">
+    <img class="pinned" width="26" src="/assets/img/pinned.png" alt="pinned">
+    <h3> Featured 
+        {% if title === "Blog" %}
+            Posts
+        {% else %}
+            {{title}}
+        {% endif %}
+        <small>({{featuredCount}})</small></h3>
+</div>
+
+<!-- List of Feature Post -->
+{% for item in collections[collection] | reverse %}
+{% if item.data.featured === true %}
+{% set count = count + 1 %}
+{% include "post-card.njk" %}
+{% endif %}
+{% endfor %}

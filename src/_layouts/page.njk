@@ -1,0 +1,35 @@
+---
+layout: layout
+---
+{% set featuredCount = 0 %}
+{% set totalCount = 0 %}
+
+{% for item in collections[collection] %}
+{% if item.data.featured === true %}
+{% set featuredCount = featuredCount + 1 %}
+{% endif %}
+{% set totalCount = totalCount + 1 %}
+{% endfor %}
+
+
+
+<main class="main-container">
+    <h2 class="page-title shake">
+        {% if title === "Blog" %}
+        Blog Posts
+        {% else %}
+        {{title}}
+        {% endif %}
+    </h2>
+
+    {% if featuredCount !== 0 %}
+    {% include "featured-posts.njk" %}
+    {% endif %}
+
+    {% if totalCount - featuredCount !== 0 %}
+    {% include "latest-posts.njk" %}
+    {% endif %}
+    
+    {{ content | safe}}
+    
+</main>

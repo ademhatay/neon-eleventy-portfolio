@@ -1,0 +1,40 @@
+<div class="post-container {{ 'featured' if item.present == true }}" style="flex-direction: column;">
+    <div class="post-section">
+        <div class="post-container-header" style="flex-direction: column; align-items: start; text-align: left;">
+            <div class="post-header-title">
+                <div class="post-tag-logo" style="background-image: url('/assets/img/{{ item.category }}.png')">
+                </div>
+                <h2 style="padding: 0;">
+                    {{ item.title | safe }}
+                </h2>
+            </div>
+            <p>
+                {{ item.description | safe }} |  {{ item.location | safe }}
+            </p>
+        </div>
+        <div class="post-container-body" style="align-self: self-start;">
+            <span class="post-container-body-date">
+                {% if item.dateIn %}
+                {{ item.dateIn | localeDate }}
+            {% endif %}
+            {% if item.dateIn %} - {% endif %}
+            {% if item.dateOut and item.present !== true %}
+                {{ item.dateOut | localeDate }}
+            {% endif %}
+            {% if item.present === true %}
+                <span class="current">Present</span>
+            {% endif %}
+            {% if item.dateIn and item.dateOut %}
+                ({{ item.dateIn | calculateExperience(item.dateOut, item.present) }})
+            {% endif %}
+            </span>
+        </div>
+    </div>
+    <div class="tags">
+        {% for tag in item.tags %}
+        <span class="tag tag-{{tag}}">
+            {{ tag }}
+        </span>
+        {% endfor %}
+    </div>
+</div>

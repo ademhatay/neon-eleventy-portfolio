@@ -1,0 +1,22 @@
+---
+layout: page
+title: Blog
+collection: post
+pagination:
+    data: collections.post
+    size: 5
+    reverse: true
+description: "Blog posts about software development, web development, and other topics."
+---
+
+
+
+<div>
+    {% for item in pagination.items %}
+    {% if item.data.featured !== true %}
+    {% include "post-card.njk" %}
+    {% endif %}
+    {% endfor %}
+</div>
+
+{% include "pagination.njk" %}

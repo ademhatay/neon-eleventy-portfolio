@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>
+        {{ title | safe }}
+        {% if title %}&rsaquo;{% endif %}
+        {{ settings.meta.siteTitle }}
+    </title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    {% include "head-meta.njk" %}
+</head>
+
+<body id="root">
+    <div class="container">
+        {% include "home/header.njk" %}
+        {{ content | safe }}
+    </div>
+
+    <script type="module" src="/assets/js/app.js"></script>
+    <!-- <script src="/assets/js/slingshot.js"></script> -->
+</body>
+
+</html>

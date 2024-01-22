@@ -1,0 +1,44 @@
+---
+layout: layout
+---
+
+<main class="main-container">
+    {% if banner %}
+    <img src="{{banner}}" alt="{{title}}" class="post-banner" />
+    {% endif %}
+    <h2 class="page-title" style="width: 100%; text-align: center;">
+        {{title}}
+    </h2>
+    
+    {% include 'author.njk' %}
+    {% include 'tags.njk' %}
+
+
+    {{ content | safe}}
+    <br />
+
+    {%- if collections.post %}
+    {%- set nextPost = collections.post | getNextCollectionItem %}
+    {%- set previousPost = collections.post | getPreviousCollectionItem %}
+    {%- if previousPost or nextPost %}
+    <div class="pagination-container prev-next-post">
+        {%- if previousPost %}
+        <div class="pagination-link">
+            <h3>Previous Post</h3>
+            <a href="{{ previousPost.url | url }}">
+                {{ previousPost.data.title }}
+            </a>
+        </div>
+        {% endif %}
+        {%- if nextPost %}
+        <div class="pagination-link" style="text-align: end;">
+            <h3>Next Post</h3>
+            <a href="{{ nextPost.url | url }}">
+                {{ nextPost.data.title }}
+            </a>
+        </div>
+        {% endif %}
+    </div>
+    {%- endif %}
+    {%- endif %}
+</main>

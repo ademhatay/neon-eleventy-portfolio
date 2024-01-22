@@ -1,0 +1,27 @@
+---
+title: About Me
+layout: page
+---
+
+<main class="main-container">
+
+    {% include 'author.njk' %}
+
+    <div class="featured-posts">
+        <img class="pinned" width="26" src="/assets/img/pinned.png" alt="pinned">
+        <h3> experiences <small>({{settings.experiences.length}})</small></h3>
+    </div>
+    {% for item in settings.experiences | reverse %}
+    {% include "education-card.njk" %}
+    {% endfor %}
+
+    
+    <div class="featured-posts">
+        <img width="32" src="/assets/img/scholarship.png" alt="pinned">
+        <h3> education <small>({{settings.educations.length}})</small></h3>
+    </div>
+    {% for item in settings.educations | reverse %}
+    {% include "education-card.njk" %}
+    {% endfor %}
+
+</main>

@@ -1,0 +1,20 @@
+---
+layout: page
+title: Projects
+collection: projects
+pagination:
+    data: collections.projects
+    size: 4
+    reverse: true
+---
+
+<div>
+    {% for item in pagination.items %}
+    {% if item.data.featured !== true %}
+    {% include "post-card.njk" %}
+    {% endif %}
+    {% endfor %}
+</div>
+
+
+{% include "pagination.njk" %}

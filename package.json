@@ -1,0 +1,17 @@
+{
+  "name": "neon-11ty-portfolio",
+  "author": "Adem Hatay",
+  "version": "0.1.0",
+  "license": "AGPL-3.0-or-later",
+  "description": "A portfolio site built with Eleventy and Neon lights",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
+  },
+  "devDependencies": {
+    "html-minifier": "^4.0.0"
+  }
+}
