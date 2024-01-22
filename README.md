@@ -1,8 +1,8 @@
 # neon-eleventy-portfolio
 ![Ekran görüntüsü 2024-01-22 060736](https://github.com/ademhatay/neon-eleventy-portfolio/assets/66277966/56d2320d-b3a4-45cc-8918-28a2827d4183)
 
-Simple Fast Effective. Create your own portfolio quickly
-
+Simple Fast Effective. Create your own portfolio quickly with Eleventy | 11ty
+ 
 ## Usage
 ```
 git clone https://github.com/ademhatay/neon-eleventy-portfolio && cd neon-eleventy-portfolio
