@@ -11,9 +11,6 @@ body,header {
     font-weight:500;
     padding:10px
 }
-.hero,body {
-    user-select:none
-}
 .hero .hero-name,.hero .hero-title,.page-title {
     text-transform:uppercase
 }
